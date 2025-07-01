@@ -1,48 +1,65 @@
 use odin_School;
+
 SELECT * FROM odin_school.amazon;
 
 -- Data Wrangling --
 
 -- change the column names and datatypes of each column
+
 alter table amazon rename column Tax_5 to Tax;
+
 alter table amazon modify Tax decimal(10,6) not null;
 
 -- Checking Rows
+
 SELECT COUNT(*) as Total_Rows FROM amazon;
 
 -- Checking Columns
+
 SELECT count(*) as No_of_Column FROM information_schema.columns 
 WHERE table_name ='amazon' and table_schema='odin_school';
 
 -- Checking Null Values
+
 SELECT COUNT(*) AS Null_values FROM amazon WHERE NULL;
 
 -- Feature Engineering 
 
 -- Step 1: Update values with correct DATE format
+
 UPDATE amazon
 SET D_ate = STR_TO_DATE(D_ate, '%d-%m-%Y');
 
 -- Step 2: Now safely convert the column type
+
 ALTER TABLE amazon MODIFY COLUMN D_ate DATE;
 
 -- Addin a new column named 'month_name' that captures the month of the year
+
 alter table amazon add column month_name varchar(50);
 update amazon set month_name = monthname(D_ate);
 
 -- Adding a new column named `dayname` that captures the day of the week on which each transaction occurred.
+
 ALTER TABLE AMAZON ADD COLUMN Day_Name varchar(50);
 UPDATE amazon SET Day_Name = DAYNAME(D_ate);
 
-select * from amazon;
 -- Adding new column that is Time_of_day that captures the time of the day (Morning , AfterNoon, Evening) 
+
 alter table amazon add column Time_of_day varchar(50);
+
 UPDATE amazon 
+
 SET Time_of_day = 
+
 CASE
+
 WHEN hour(T_ime) BETWEEN 06 and 11 THEN "Morning"
+
 WHEN hour(T_ime) BETWEEN 12 and 17 THEN 'Afternoon'
+
 ELSE 'Evening'
+
 END;
 
  -- disabling safe mode
@@ -52,9 +69,11 @@ END;
 -- Solve the Business Problems --
 
 -- 1. What is the count of distinct cities in the dataset?
+
  select city, count(distinct(city)) as count from amazon group by city;
 
 -- 2. For each branch, what is the corresponding city?
+
  select distinct city,branch from amazon order by branch;
  
 -- 3. What is the count of distinct product lines in the dataset?
