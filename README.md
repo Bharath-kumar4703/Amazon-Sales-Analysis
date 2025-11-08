@@ -25,7 +25,7 @@ This dataset contained sales transactions from three different branches of Amazo
 - **gross_income**
 - **rating**
 
-### Tools and Technologies Used
+## Tools and Technologies Used
 - **Tools**: MySQL and Excel for validation
 - **Techniques**: Joins, Subqueries, CTEs, Window Functions, Aggregate Functions, and Case Statements
 - **Focus Areas**: Data aggregation, ranking, trend analysis, and performance reporting
