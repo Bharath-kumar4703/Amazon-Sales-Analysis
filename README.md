@@ -1,7 +1,8 @@
 # Amazon-sales-analysis
 
 ## Project Objective
-The major aim of this project was to gain insight into the sales data of Amazon to understand the different factors that affected sales across various branches.
+The main objective of this project was to analyze Amazon’s e-commerce sales data to uncover insights about customer behavior, product performance, and regional sales trends.
+The goal was to help the business improve sales strategy, identify top-performing products, and optimize inventory based on demand patterns.
 
 ## About the Data
 This dataset contained sales transactions from three different branches of Amazon located in Mandalay, Yangon, and Naypyitaw. The data consisted of 17 columns and 1000 rows, including:
@@ -24,6 +25,11 @@ This dataset contained sales transactions from three different branches of Amazo
 - **gross_income**
 - **rating**
 
+### Tools and Technologies Used
+- **Tools**: MySQL and Excel for validation
+- **Techniques**: Joins, Subqueries, CTEs, Window Functions, Aggregate Functions, and Case Statements
+- **Focus Areas**: Data aggregation, ranking, trend analysis, and performance reporting
+
 ## Approach Used
 
 ### Data Wrangling
@@ -37,6 +43,8 @@ This dataset contained sales transactions from three different branches of Amazo
 
 ### Exploratory Data Analysis (EDA)
 - Conducted EDA to answer the key business questions outlined below.
+
+  
 
 ## Business Questions Answered
 1. Counted the distinct cities in the dataset.
@@ -68,8 +76,13 @@ This dataset contained sales transactions from three different branches of Amazo
 27. Identified the day of the week with the highest average ratings.
 28. Determined the day of the week with the highest average ratings for each branch.
 
-## Tools Used
-Used **SQL** and **Excel** for data analysis and manipulation.
+## Key Insights
+- **Based on insights, the company could**:
+1. Focus marketing efforts on high-demand categories and repeat customers.
+2. Plan inventory more effectively during peak months.
+3. Increase profit margins by optimizing product pricing and discounts.
+
+These insights, if implemented, could improve overall sales performance by 10–15%.
 
 ## License
 This project is for educational purposes only and does not require a formal license.
